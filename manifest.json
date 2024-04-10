@@ -1,10 +1,23 @@
 {
   "manifest_version": 3,
-  "name": "Project Name",
+  "name": "Shaper",
   "version": "1.0",
-  "description": "",
+  "description": "A Request Interception and Modification Plugin",
   "action": {
-    "default_title": "Project Default Title",
-    "default_popup": "index.html"
-  }
+    "default_title": "Shaper",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
 }

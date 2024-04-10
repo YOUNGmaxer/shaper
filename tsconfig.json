@@ -4,7 +4,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": [
-      "ESNext"
+      "ESNext",
+      "DOM"
     ],
     "paths": {
       "@/*": [
