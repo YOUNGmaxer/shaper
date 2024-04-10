@@ -13,6 +13,7 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.266",
     "@types/node": "^20.12.5",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.4.2",

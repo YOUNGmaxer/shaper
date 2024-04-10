@@ -1,6 +1,6 @@
-import './style'
+import '@/style'
 import App from './Popup.vue'
-import { router } from './router'
+import { router } from '@/router'
 
 const app = createApp(App)
 

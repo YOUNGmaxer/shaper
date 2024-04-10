@@ -5,10 +5,20 @@
   "description": "A Request Interception and Modification Plugin",
   "action": {
     "default_title": "Shaper",
-    "default_popup": "popup.html"
+    "default_popup": "src/popup/popup.html"
   },
   "permissions": [
     "activeTab"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content/content.html"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
   ],
   "content_scripts": [
     {
@@ -16,7 +26,7 @@
         "https://*/*"
       ],
       "js": [
-        "content.js"
+        "content-script.js"
       ]
     }
   ]
