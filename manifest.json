@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Project Name",
+  "version": "1.0",
+  "description": "",
+  "action": {
+    "default_title": "Project Default Title",
+    "default_popup": "index.html"
+  }
+}
