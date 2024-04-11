@@ -3,6 +3,7 @@
     "strict": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "module": "NodeNext",
     "lib": [
       "ESNext",
       "DOM"
@@ -10,7 +11,7 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
     },
   }
 }

@@ -17,10 +17,10 @@
     "@types/node": "^20.12.5",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.4.2",
-    "unocss": "0.58.8",
+    "unocss": "0.59.2",
     "unplugin-auto-import": "^0.17.5",
     "vite": "^5.1.5",
-    "vite-plugin-chrome-builder": "^0.0.1"
+    "vite-plugin-chrome-builder": "^0.1.1"
   },
   "pnpm": {
     "overrides": {
