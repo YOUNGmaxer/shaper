@@ -4,11 +4,11 @@
   "version": "1.0",
   "description": "A Request Interception and Modification Plugin",
   "action": {
-    "default_title": "Shaper",
-    "default_popup": "src/popup/popup.html"
+    "default_title": "Shaper"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
   "web_accessible_resources": [
     {
@@ -23,7 +23,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*/*"
+        "<all_urls>"
       ],
       "js": [
         "content-script.js"
