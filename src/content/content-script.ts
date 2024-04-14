@@ -5,7 +5,7 @@ function createContentIframe(): HTMLIFrameElement {
   const iframe = document.createElement('iframe')
   iframe.className = 'azer-shaper'
   iframe.style.cssText =
-    'height: 100%; width: 500px; position: fixed; top: 0; right: 0; z-index: 99999; border: none; transform: translateX(500px); transition: all .4s;'
+    'height: 100%; width: 500px; position: fixed; top: 0; right: 0; z-index: 99999; border: none; transform: translateX(500px); transition: all .4s; box-shadow: 0 0 15px 2px rgba(0,0,0,0.12);'
   iframe.src = chrome.runtime.getURL('src/content/content.html')
   return iframe
 }
