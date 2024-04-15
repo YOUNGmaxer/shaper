@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import PageA from '@/pages/page-a/index.vue'
+import Rules from '@/pages/rules/index.vue'
 
 export enum RouterName {
-  PageA = 'PageA',
+  Rules = 'Rules',
 }
 
 export const router = createRouter({
@@ -10,12 +10,12 @@ export const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: { name: RouterName.PageA },
+      redirect: { name: RouterName.Rules },
     },
     {
-      path: '/page-a',
-      name: RouterName.PageA,
-      component: PageA,
+      path: '/rules',
+      name: RouterName.Rules,
+      component: Rules,
     },
   ],
 })
