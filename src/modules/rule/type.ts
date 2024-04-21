@@ -16,4 +16,4 @@ export type Rule = {
   handlers: Handler[]
 }
 
-export type RuleMap = Map<RuleKey, Rule[]>
+export type RuleEntityMap = Map<RuleKey, Rule[]>

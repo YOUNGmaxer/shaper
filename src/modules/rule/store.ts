@@ -1,25 +1,30 @@
-import { Rule, RuleMap } from './type'
+import { Rule, RuleEntityMap } from './type'
 
 interface State {
   /** 规则集 */
   rules: Rule[]
-  ruleMap: RuleMap
+  ruleEntityMap: RuleEntityMap
 }
 
 export const useRule = defineStore('rule', {
   state: (): State => ({
     rules: [],
-    ruleMap: new Map(),
+    ruleEntityMap: new Map(),
   }),
 
   actions: {
-    /** 添加规则应用实体 */
+    /** 添加规则实体 */
     addRuleEntity(key: string, rules: Rule[]) {
-      if (this.ruleMap.has(key)) {
+      if (this.ruleEntityMap.has(key)) {
         message.warning(`${key} 已存在`)
         return
       }
-      this.ruleMap.set(key, rules)
+      this.ruleEntityMap.set(key, rules)
+    },
+
+    /** 删除规则实体 */
+    deleteRuleEntity(key: string) {
+      this.ruleEntityMap.delete(key)
     },
   },
 })

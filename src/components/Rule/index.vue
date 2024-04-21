@@ -1,37 +1,40 @@
 <script setup lang="ts">
-import { Rule, RuleKey } from '@/modules/rule'
+import { Rule, RuleKey, useRule } from '@/modules/rule'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import RuleEditor from '@/components/Rule/components/RuleEditor/index.vue'
 
 defineProps<{
   ruleKey: RuleKey
-  rule: Rule
+  rules: Rule[]
 }>()
 
 const visible = ref(false)
+const { deleteRuleEntity } = useRule()
 
 const clickEdit = () => {
   visible.value = true
 }
-const clickDelete = () => {
+const clickDelete = (ruleKey: string) => {
   Modal.confirm({
     title: '确定删除吗？',
     onOk() {
-      console.log('delete')
+      deleteRuleEntity(ruleKey)
     },
   })
 }
 </script>
 
 <template>
-  <ACollapse>
-    <ACollapsePanel :key="ruleKey" :header="ruleKey">
-      {{ rule }}
-      <template #extra>
-        <EditOutlined @click.stop="clickEdit" />
-        <DeleteOutlined ml-10px @click.stop="clickDelete" />
-      </template>
-    </ACollapsePanel>
-  </ACollapse>
-  <RuleEditor v-model:visible="visible" />
+  <div>
+    <ACollapse>
+      <ACollapsePanel :key="ruleKey" :header="ruleKey">
+        {{ rules }}
+        <template #extra>
+          <EditOutlined @click.stop="clickEdit" />
+          <DeleteOutlined ml-10px @click.stop="clickDelete(ruleKey)" />
+        </template>
+      </ACollapsePanel>
+    </ACollapse>
+    <RuleEditor v-model:visible="visible" />
+  </div>
 </template>

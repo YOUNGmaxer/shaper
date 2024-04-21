@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { Rule } from '@/modules/rule'
+import { Rule, useRule } from '@/modules/rule'
 
 const visible = defineModel<boolean>('visible')
 
+const route = ref('')
 const rule = ref<Rule>({
   name: '',
   mockData: '',
   handlers: [],
   disabled: false,
 })
+const ruleStore = useRule()
 
 const submit = () => {
-  console.log('submit', rule.value)
+  ruleStore.addRuleEntity(route.value, [rule.value])
   visible.value = false
 }
 </script>
@@ -19,7 +21,7 @@ const submit = () => {
 <template>
   <AModal v-model:open="visible" title="编辑规则" @ok="submit">
     <ADivider dashed>Route</ADivider>
-    <AInput />
+    <AInput v-model:value="route" />
     <ADivider dashed>Rule</ADivider>
     <AForm :model="rule" :label-col="{ span: 4 }">
       <AFormItem name="name" label="Name">
