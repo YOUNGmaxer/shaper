@@ -24,7 +24,7 @@ export default defineConfig({
         'vue',
         'pinia',
         {
-          'ant-design-vue': ['Modal'],
+          'ant-design-vue': ['Modal', 'message'],
         },
       ],
     }),
