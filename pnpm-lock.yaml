@@ -8,9 +8,15 @@ overrides:
   rollup: npm:@rollup/wasm-node
 
 dependencies:
+  '@ant-design/icons-vue':
+    specifier: ^7.0.1
+    version: 7.0.1(vue@3.4.21)
   ant-design-vue:
     specifier: 4.x
     version: 4.1.2(vue@3.4.21)
+  pinia:
+    specifier: ^2.1.7
+    version: 2.1.7(typescript@5.4.2)(vue@3.4.21)
   vue:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.4.2)
@@ -719,8 +725,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@rollup/wasm-node@4.14.2:
-    resolution: {integrity: sha512-iwZbxtvP/0icwPWExUZWfA3A2jqQkDY38E8R5onRY2ALFmom0k7e37n9WDcJMMRcx/pdenfN8NaSohzX9LiDEQ==}
+  /@rollup/wasm-node@4.15.0:
+    resolution: {integrity: sha512-nI+lxSZ+oFIP4MuyN8tUWepHl55BxmMnUts097dvLEBJvTbqGrLACfmvCq0RcNQsJXd539kIOdF0HHX1eJ7sfQ==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
     dependencies:
@@ -1707,6 +1713,24 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
+  /pinia@2.1.7(typescript@5.4.2)(vue@3.4.21):
+    resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.6.1
+      typescript: 5.4.2
+      vue: 3.4.21(typescript@5.4.2)
+      vue-demi: 0.14.7(vue@3.4.21)
+    dev: false
+
   /pkg-types@1.0.3:
     resolution: {integrity: sha512-nN7pYi0AQqJnoLPC9eHFQ8AcyaixBUOwvqc5TDnIKCMEE6I0y8P7OKA7fPexsXGCGxQDl/cmrLAp26LhcwxZ4A==}
     dependencies:
@@ -2067,10 +2091,25 @@ packages:
       '@types/node': 20.12.5
       esbuild: 0.19.12
       postcss: 8.4.35
-      rollup: /@rollup/wasm-node@4.14.2
+      rollup: /@rollup/wasm-node@4.15.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true
+
+  /vue-demi@0.14.7(vue@3.4.21):
+    resolution: {integrity: sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.4.21(typescript@5.4.2)
+    dev: false
 
   /vue-router@4.3.0(vue@3.4.21):
     resolution: {integrity: sha512-dqUcs8tUeG+ssgWhcPbjHvazML16Oga5w34uCUmsk7i0BcnskoLGwjpa15fqMr2Fa5JgVBrdL2MEgqz6XZ/6IQ==}

@@ -6,7 +6,9 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
+  const Modal: typeof import('ant-design-vue')['Modal']
   const acceptHMRUpdate: typeof import('pinia')['acceptHMRUpdate']
+  const ant-design-vue: typeof import('Modal')['ant-design-vue']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const createPinia: typeof import('pinia')['createPinia']

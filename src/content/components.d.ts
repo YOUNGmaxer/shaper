@@ -10,6 +10,9 @@ declare module 'vue' {
     AButton: typeof import('ant-design-vue/es')['Button']
     ACollapse: typeof import('ant-design-vue/es')['Collapse']
     ACollapsePanel: typeof import('ant-design-vue/es')['CollapsePanel']
+    ADivider: typeof import('ant-design-vue/es')['Divider']
+    AInput: typeof import('ant-design-vue/es')['Input']
+    AModal: typeof import('ant-design-vue/es')['Modal']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

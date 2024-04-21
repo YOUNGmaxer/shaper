@@ -20,7 +20,13 @@ export default defineConfig({
     ChromeExtensionBuilder(),
     AutoImport({
       dts: 'types/auto-imports.d.ts',
-      imports: ['vue', 'pinia'],
+      imports: [
+        'vue',
+        'pinia',
+        {
+          'ant-design-vue': ['Modal'],
+        },
+      ],
     }),
     Components({
       resolvers: [
