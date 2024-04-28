@@ -1,7 +1,7 @@
 lockfileVersion: '6.0'
 
 settings:
-  autoInstallPeers: true
+  autoInstallPeers: false
   excludeLinksFromLockfile: false
 
 overrides:
@@ -39,7 +39,7 @@ devDependencies:
     version: 5.4.2
   unocss:
     specifier: 0.59.2
-    version: 0.59.2(postcss@8.4.38)(vite@5.1.5)
+    version: 0.59.2(vite@5.1.5)
   unplugin-auto-import:
     specifier: ^0.17.5
     version: 0.17.5
@@ -715,7 +715,7 @@ packages:
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
-      rollup: npm:@rollup/wasm-node
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
         optional: true
@@ -725,8 +725,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@rollup/wasm-node@4.15.0:
-    resolution: {integrity: sha512-nI+lxSZ+oFIP4MuyN8tUWepHl55BxmMnUts097dvLEBJvTbqGrLACfmvCq0RcNQsJXd539kIOdF0HHX1eJ7sfQ==}
+  /@rollup/wasm-node@4.17.0:
+    resolution: {integrity: sha512-EOKrg8I26cw7+M8mn5PDWfq4TIyJ7OGeZuaK7Pm3wn5nLJYfRH7CQV/IT+j9MpaVW84JPRp2FGqePdyF8FkTEQ==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
     dependencies:
@@ -838,11 +838,9 @@ packages:
       sirv: 2.0.4
     dev: true
 
-  /@unocss/postcss@0.59.2(postcss@8.4.38):
+  /@unocss/postcss@0.59.2:
     resolution: {integrity: sha512-9pRixhnL9B1sdhzY7zlhnBXc8nVNwDCT4nMQRgSdWNvT76dImVv1N3609veIrCfLEHQJi52Juo//trSNLjUzZQ==}
     engines: {node: '>=14'}
-    peerDependencies:
-      postcss: ^8.4.21
     dependencies:
       '@unocss/config': 0.59.2
       '@unocss/core': 0.59.2
@@ -1938,7 +1936,7 @@ packages:
       - rollup
     dev: true
 
-  /unocss@0.59.2(postcss@8.4.38)(vite@5.1.5):
+  /unocss@0.59.2(vite@5.1.5):
     resolution: {integrity: sha512-9puB1L+VxpCAgeidkd67otmA0pbqNPxBPT/8l6gncF0i2RE0WkKITlMflP0PhLNpOdHUfUWb9Cdj1aVnjRnXFA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -1954,7 +1952,7 @@ packages:
       '@unocss/cli': 0.59.2
       '@unocss/core': 0.59.2
       '@unocss/extractor-arbitrary-variants': 0.59.2
-      '@unocss/postcss': 0.59.2(postcss@8.4.38)
+      '@unocss/postcss': 0.59.2
       '@unocss/preset-attributify': 0.59.2
       '@unocss/preset-icons': 0.59.2
       '@unocss/preset-mini': 0.59.2
@@ -1972,7 +1970,6 @@ packages:
       '@unocss/vite': 0.59.2(vite@5.1.5)
       vite: 5.1.5(@types/node@20.12.5)
     transitivePeerDependencies:
-      - postcss
       - rollup
       - supports-color
     dev: true
@@ -2091,7 +2088,7 @@ packages:
       '@types/node': 20.12.5
       esbuild: 0.19.12
       postcss: 8.4.35
-      rollup: /@rollup/wasm-node@4.15.0
+      rollup: /@rollup/wasm-node@4.17.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: true

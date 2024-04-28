@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import RuleEntity from '@/components/Rule/index.vue'
-import AddButton from '@/components/Rule/components/AddButton.vue'
+import RuleEntity from '@/components/RuleEntity/index.vue'
+import AddButton from '@/components/RuleEntity/components/AddButton.vue'
 import { useRule } from '@/modules/rule'
 
 const ruleStore = useRule()
