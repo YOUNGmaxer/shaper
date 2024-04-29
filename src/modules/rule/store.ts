@@ -6,7 +6,7 @@ interface State {
   ruleEntityMap: RuleEntityMap
 }
 
-export const useRule = defineStore('rule', {
+export const useRuleStore = defineStore('rule', {
   state: (): State => ({
     rules: [],
     ruleEntityMap: new Map(),

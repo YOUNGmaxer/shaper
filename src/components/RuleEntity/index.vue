@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Rule as IRule, RuleKey, useRule } from '@/modules/rule'
+import { Rule as IRule, RuleKey, useRuleStore } from '@/modules/rule'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
-import RuleEditor from './components/RuleEditor/index.vue'
+import RuleEntityEditor from './components/RuleEntityEditor/index.vue'
 import Rule from '@/components/Rule/index.vue'
 
 defineProps<{
@@ -10,16 +10,24 @@ defineProps<{
 }>()
 
 const visible = ref(false)
-const { deleteRuleEntity } = useRule()
+const { deleteRuleEntity } = useRuleStore()
 
 const clickEdit = () => {
   visible.value = true
 }
-const clickDelete = (ruleKey: string) => {
+const clickDeleteEntity = (ruleKey: string) => {
   Modal.confirm({
     title: '确定删除吗？',
     onOk() {
       deleteRuleEntity(ruleKey)
+    },
+  })
+}
+const clickDeleteRule = (rule: IRule) => {
+  Modal.confirm({
+    title: '确定删除规则吗？',
+    onOk() {
+      // ..
     },
   })
 }
@@ -29,13 +37,13 @@ const clickDelete = (ruleKey: string) => {
   <div>
     <ACollapse>
       <ACollapsePanel :key="ruleKey" :header="ruleKey">
-        <Rule v-for="item in rules" :key="item.name" :rule="item" />
+        <Rule v-for="item in rules" :key="item.name" :rule="item" @delete="clickDeleteRule" />
         <template #extra>
           <EditOutlined @click.stop="clickEdit" />
-          <DeleteOutlined ml-10px @click.stop="clickDelete(ruleKey)" />
+          <DeleteOutlined ml-10px @click.stop="clickDeleteEntity(ruleKey)" />
         </template>
       </ACollapsePanel>
     </ACollapse>
-    <RuleEditor v-model:visible="visible" />
+    <RuleEntityEditor v-model:visible="visible" />
   </div>
 </template>

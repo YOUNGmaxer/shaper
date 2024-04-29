@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Rule, useRule } from '@/modules/rule'
+import { Rule, useRuleStore } from '@/modules/rule'
 
 const visible = defineModel<boolean>('visible')
 
@@ -10,7 +10,7 @@ const rule = ref<Rule>({
   handlers: [],
   disabled: false,
 })
-const ruleStore = useRule()
+const ruleStore = useRuleStore()
 
 const submit = () => {
   ruleStore.addRuleEntity(route.value, [rule.value])
@@ -19,7 +19,7 @@ const submit = () => {
 </script>
 
 <template>
-  <AModal v-model:open="visible" title="编辑规则" @ok="submit">
+  <AModal v-model:open="visible" title="编辑规则" :mask-closable="false" @ok="submit">
     <ADivider dashed>Route</ADivider>
     <AInput v-model:value="route" />
     <ADivider dashed>Rule</ADivider>
