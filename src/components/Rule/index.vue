@@ -16,9 +16,9 @@ const emit = defineEmits<{
       <template #extra>
         <div v-if="rule.mockData" flex items-center>
           <ATag color="#87d068">mock</ATag>
-          <MinusCircleTwoTone two-tone-color="red" @click.stop="emit('delete', rule)" />
         </div>
         <ATag v-if="rule.handlers.length" color="#108ee9">handler</ATag>
+        <MinusCircleTwoTone two-tone-color="red" @click.stop="emit('delete', rule)" />
       </template>
       <div v-if="rule.mockData">mockData: {{ rule.mockData }}</div>
       <div v-else-if="rule.handlers.length">mockData: {{ rule.handlers }}</div>

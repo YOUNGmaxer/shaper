@@ -11,6 +11,6 @@ const visible = ref(false)
       <PlusOutlined />
       <slot />
     </AButton>
-    <RuleEntityEditor v-model:visible="visible" />
+    <RuleEntityEditor v-if="visible" v-model:visible="visible" />
   </div>
 </template>
