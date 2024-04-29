@@ -3,6 +3,7 @@ import { Rule as IRule, RuleKey, useRuleStore } from '@/modules/rule'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import RuleEntityEditor from './components/RuleEntityEditor/index.vue'
 import Rule from '@/components/Rule/index.vue'
+import AddRuleButton from '@/components/Rule/AddRuleButton.vue'
 
 const props = defineProps<{
   ruleKey: RuleKey
@@ -38,6 +39,7 @@ const clickDeleteRule = (rule: IRule) => {
     <ACollapse>
       <ACollapsePanel :key="ruleKey" :header="ruleKey">
         <Rule v-for="item in rules" :key="item.name" :rule="item" @delete="clickDeleteRule" />
+        <AddRuleButton mt-8px />
         <template #extra>
           <EditOutlined @click.stop="clickEdit" />
           <DeleteOutlined ml-10px @click.stop="clickDeleteEntity(ruleKey)" />
