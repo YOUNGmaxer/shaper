@@ -35,6 +35,12 @@ export const useRuleStore = defineStore('rule', {
       this.ruleEntityMap.delete(key)
     },
 
+    /** 向实体中添加一条规则 */
+    addRuleForEntity(key: string, rule: Rule) {
+      const rules = this.getRuleEntity(key)
+      this.updateRuleEntity(key, [...rules, rule])
+    },
+
     /** 从规则实体中删除某条规则 */
     deleteRuleFromEntity(key: string, rule: Rule) {
       const rules = this.getRuleEntity(key)

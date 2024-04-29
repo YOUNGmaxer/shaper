@@ -10,10 +10,10 @@ const rule = ref<Rule>({
   handlers: [],
   disabled: false,
 })
-const ruleStore = useRuleStore()
+const { addRuleEntity } = useRuleStore()
 
 const submit = () => {
-  ruleStore.addRuleEntity(route.value, [rule.value])
+  addRuleEntity(route.value, [rule.value])
   visible.value = false
 }
 </script>
