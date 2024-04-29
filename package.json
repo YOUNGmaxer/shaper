@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",
+    "dev": "vite",
     "build:watch": "bunx --bun vite build --watch",
     "build": "vite build"
   },

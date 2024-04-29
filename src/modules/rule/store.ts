@@ -13,8 +13,12 @@ export const useRuleStore = defineStore('rule', {
   }),
 
   actions: {
+    getRuleEntity(key: string): Rule[] {
+      return this.ruleEntityMap.get(key) || []
+    },
+
     /** 添加规则实体 */
-    addRuleEntity(key: string, rules: Rule[]) {
+    addRuleEntity(key: string, rules: Rule[]): void {
       if (this.ruleEntityMap.has(key)) {
         message.warning(`${key} 已存在`)
         return
@@ -22,9 +26,22 @@ export const useRuleStore = defineStore('rule', {
       this.ruleEntityMap.set(key, rules)
     },
 
+    updateRuleEntity(key: string, rules: Rule[]): void {
+      this.ruleEntityMap.set(key, rules)
+    },
+
     /** 删除规则实体 */
-    deleteRuleEntity(key: string) {
+    deleteRuleEntity(key: string): void {
       this.ruleEntityMap.delete(key)
+    },
+
+    /** 从规则实体中删除某条规则 */
+    deleteRuleFromEntity(key: string, rule: Rule) {
+      const rules = this.getRuleEntity(key)
+      this.updateRuleEntity(
+        key,
+        rules.filter((item) => item.name !== rule.name)
+      )
     },
   },
 })

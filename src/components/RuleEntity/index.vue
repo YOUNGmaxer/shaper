@@ -4,13 +4,13 @@ import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import RuleEntityEditor from './components/RuleEntityEditor/index.vue'
 import Rule from '@/components/Rule/index.vue'
 
-defineProps<{
+const props = defineProps<{
   ruleKey: RuleKey
   rules: IRule[]
 }>()
 
 const visible = ref(false)
-const { deleteRuleEntity } = useRuleStore()
+const { deleteRuleEntity, deleteRuleFromEntity } = useRuleStore()
 
 const clickEdit = () => {
   visible.value = true
@@ -27,7 +27,7 @@ const clickDeleteRule = (rule: IRule) => {
   Modal.confirm({
     title: '确定删除规则吗？',
     onOk() {
-      // ..
+      deleteRuleFromEntity(props.ruleKey, rule)
     },
   })
 }
