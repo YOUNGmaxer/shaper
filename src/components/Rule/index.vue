@@ -14,11 +14,11 @@ const emit = defineEmits<{
   <ACollapse>
     <ACollapsePanel :key="rule.name" :header="rule.name">
       <template #extra>
-        <div v-if="rule.mockData" flex items-center>
-          <ATag color="#87d068">mock</ATag>
+        <div flex items-center>
+          <ATag v-if="rule.mockData" color="#87d068">mock</ATag>
+          <ATag v-if="rule.handlers.length" color="#108ee9">handler</ATag>
+          <MinusCircleTwoTone two-tone-color="red" @click.stop="emit('delete', rule)" />
         </div>
-        <ATag v-if="rule.handlers.length" color="#108ee9">handler</ATag>
-        <MinusCircleTwoTone two-tone-color="red" @click.stop="emit('delete', rule)" />
       </template>
       <div v-if="rule.mockData">mockData: {{ rule.mockData }}</div>
       <div v-else-if="rule.handlers.length">mockData: {{ rule.handlers }}</div>

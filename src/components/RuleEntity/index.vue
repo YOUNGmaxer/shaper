@@ -39,7 +39,7 @@ const clickDeleteRule = (rule: IRule) => {
     <ACollapse>
       <ACollapsePanel :key="ruleKey" :header="ruleKey">
         <Rule v-for="item in rules" :key="item.name" :rule="item" @delete="clickDeleteRule" />
-        <AddRuleButton mt-8px />
+        <AddRuleButton not-first:mt-8px />
         <template #extra>
           <EditOutlined @click.stop="clickEdit" />
           <DeleteOutlined ml-10px @click.stop="clickDeleteEntity(ruleKey)" />
