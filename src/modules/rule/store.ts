@@ -38,6 +38,10 @@ export const useRuleStore = defineStore('rule', {
     /** 向实体中添加一条规则 */
     addRuleForEntity(key: string, rule: Rule) {
       const rules = this.getRuleEntity(key)
+      if (rules.some((item) => item.name === rule.name)) {
+        message.warning(`「${rule.name}」规则已存在`)
+        return
+      }
       this.updateRuleEntity(key, [...rules, rule])
     },
 
